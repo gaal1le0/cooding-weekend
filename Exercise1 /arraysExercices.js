@@ -61,7 +61,7 @@ function organizeCleanData() {
 // genera una escusa aleatoria a partir de los datos recibidos
 function excuseGenerator() {
 
-    let response;
+    let response = "";
 
     //traemos los datos limpios
     const cleanData = organizeCleanData();
