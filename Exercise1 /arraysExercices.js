@@ -1,7 +1,5 @@
 /*
-
 NORMAS
-
 crear una funcion que genere una escusa aleatoria con esos datos 
 creeis otra funcion que cuente el numero de repeticiones de letras en cada array
 suprimir repeticiones en un array y devolver el array sin la repeticion
@@ -14,7 +12,6 @@ no se pueden utilizar objetos
 obligatorio programacion funcional
 todas las variables y nombres en funcoines en ingles
 escritura camel-case
-
 */
 
 // datos iniciales 
@@ -52,7 +49,7 @@ function organizeCleanData() {
 
     return {
         surnames: cleanArray(surnames),
-        excuses: cleanArray(excuses),
+        excuses: cleanArray(escuses),
         dates: cleanArray(dates)
     };
 
@@ -74,6 +71,8 @@ function excuseGenerator() {
     return response;
 
 }
+
+console.log(`DEMO generador de excusas ${excuseGenerator()}`);
 
 // contar el numero de repeticiones de letra en un array
 function countLetterMatches(array) {
@@ -104,6 +103,12 @@ function countLetterMatches(array) {
 
     return response;
 
+}
+
+// demo recuentro de letras
+const exampleCounterLetters = countLetterMatches(escuses);
+for (var property in exampleCounterLetters) {
+    console.log(`DEMO COUNTER LETTER: KEY: ${property}, value: ${exampleCounterLetters[property]}`);
 }
 
 // suprimir repeticiones de un array
@@ -143,10 +148,12 @@ function removeMatches(array) {
 
 }
 
+console.log(`DEMO REMOVE MATCHES: ${removeMatches(surnames)}`);
+
 // invertir palabra 
 function invertWord(word) {
 
-    let invertWord;
+    let invertWord = "";
 
     // recorremos cada letra
     for (let index = (word.length - 1); index >= 0; index--) {
@@ -176,3 +183,5 @@ function invertAllValues(array) {
     return response;
 
 }
+
+console.log(`Invert all values: ${invertAllValues(escuses)}`);
