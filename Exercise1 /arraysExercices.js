@@ -94,7 +94,7 @@ function countLetterMatches(array) {
                 response[letter]++;
             } else {
                 // creamos una nueva propiedad
-                Object.defineProperty(response, letter, { value: 1 });
+                response[letter] = 1;
             }
 
         }
@@ -107,8 +107,10 @@ function countLetterMatches(array) {
 
 // demo recuentro de letras
 const exampleCounterLetters = countLetterMatches(escuses);
-for (var property in exampleCounterLetters) {
-    console.log(`DEMO COUNTER LETTER: KEY: ${property}, value: ${exampleCounterLetters[property]}`);
+console.log(`DEMO RECUENTO LETRAS: ${Object.keys(exampleCounterLetters)}`);
+console.log('Despligue');
+for (let property in exampleCounterLetters){
+    console.log(`key: ${property}, value: ${exampleCounterLetters[property]}`);
 }
 
 // suprimir repeticiones de un array
