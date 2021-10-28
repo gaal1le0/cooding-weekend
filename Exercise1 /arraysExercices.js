@@ -37,7 +37,7 @@ function cleanArray(array) {
     let response = [];
 
     // recorrer el array completo
-    for (item of array) {
+    for (let item of array) {
         if (typeof(item) === 'string') {
             response.push(item);
         }
@@ -50,7 +50,7 @@ function cleanArray(array) {
 // crear un objeto y limpiar todas las functiones
 function organizeCleanData() {
 
-    return response = {
+    return {
         surnames: cleanArray(surnames),
         excuses: cleanArray(excuses),
         dates: cleanArray(dates)
@@ -67,9 +67,9 @@ function excuseGenerator() {
     const cleanData = organizeCleanData();
 
     //compose response
-    response += `${surnames[randomNumber(cleanData.surnames)]} `;
-    response += `${excuses[randomNumber(cleanData.excuses)]} `;
-    response += dates[randomNumber(cleanData.dates)];
+    response += `${cleanData.surnames[randomNumber(cleanData.surnames)]} `;
+    response += `${cleanData.excuses[randomNumber(cleanData.excuses)]} `;
+    response += cleanData.dates[randomNumber(cleanData.dates)];
 
     return response;
 
@@ -84,10 +84,10 @@ function countLetterMatches(array) {
     const cleanData = cleanArray(array);
 
     // recorremos el array
-    for (item of cleanData) {
+    for (let item of cleanData) {
 
         // recorremos cada letra dal item
-        for (letter in item) {
+        for (let letter of item) {
 
             // comprobamos si existe
             if (response.hasOwnProperty(letter)) {
@@ -130,7 +130,7 @@ function removeMatches(array) {
     let response = [];
 
     // recorremos el array
-    for (item of cleanData) {
+    for (let item of cleanData) {
 
         //comprobamos si esta ya guardado
         if (!response.includes(item)) {
@@ -166,7 +166,7 @@ function invertAllValues(array) {
     let cleanData = cleanArray(array);
 
     // recorrer array
-    for (item of cleanData) {
+    for (let item of cleanData) {
 
         // invertir palabra
         response.push(invertWord(item));
