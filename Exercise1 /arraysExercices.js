@@ -89,12 +89,12 @@ function countLetterMatches(array) {
         for (let letter of item) {
 
             // comprobamos si existe
-            if (response.hasOwnProperty(letter)) {
+            if (response.hasOwnProperty(letter.toLowerCase())) {
                 // aumentamos el contador de repeticioines
-                response[letter]++;
+                response[letter.toLowerCase()]++;
             } else {
                 // creamos una nueva propiedad
-                response[letter] = 1;
+                response[letter.toLowerCase()] = 1;
             }
 
         }
