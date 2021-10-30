@@ -72,3 +72,18 @@ const sort = (array, type) => {
     }
 
 }
+
+// calcular la media aritmetica
+const mediaAritmetica = (arr) => {
+
+    //clean array
+    let cleanArray = cleanData(arr);
+
+    // sumar todos los valores
+    let suma = cleanArray.reduce((accumulator, currentValue) => accumulator + currentValue);
+
+    // calcular la media
+    let media = Math.floor(suma / arr.length);
+    return media;
+
+}
