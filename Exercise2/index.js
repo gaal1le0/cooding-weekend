@@ -17,3 +17,58 @@ const cleanData = (array) => {
     return response;
 
 };
+
+// ordenar de menor a mayor el array
+// aplicando merge-sort
+
+// construye el array ordenado
+const _merge = (left, right, type) => {
+
+    let sorted = [];
+
+    //comenzamos a construir mitades
+    while (left.length && right.length) {
+        sorted.push(type === '>' ? (left[0] > right[0] ? left.shift() : right.shift()) : (left[0] < right[0] ? left.shift() : right.shift()));
+    }
+
+    //continuamos agregando las partes del array
+    while (left.length) {
+        sorted.push(left.shift());
+    }
+
+    while (right.length) {
+        sorted.push(right.shift());
+    }
+
+    return sorted;
+
+}
+
+// comienza el proceso
+const sort = (array, type) => {
+
+    //compromos el tipo
+    if (type === '<' || type === '>') {
+
+        //comprobar si ya esta listo
+        if (array.length < 2) { return array }
+
+        //calcular la mitad del array
+        const middle = Math.floor(array.length / 2);
+        //obtener las mitades
+        const startMiddle = array.slice(0, middle);
+        const secondMiddle = array.slice(middle, array.length);
+
+        //dividir las mitades
+        //aplicando recursividaad
+        const firstSort = sort(startMiddle, type);
+        const secondSort = sort(secondMiddle, type);
+
+        //construimos el array ordenado
+        return _merge(firstSort, secondSort, type);
+
+    } else {
+        return null;
+    }
+
+}
