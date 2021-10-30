@@ -73,6 +73,43 @@ const sort = (array, type) => {
 
 };
 
+// ordenar mediante 
+const bubbleSort = (arr, type) => {
+
+    // comprobamos el tipo
+    if (type == '>' || type == '<') {
+        // limpiamos el array
+        let cleanArray = cleanData(arr);
+
+        // recorremos el array
+        for (let i = 0; i <= (cleanArray.length - 1); i++) {
+
+            // segundo recorrido
+            for (let j = 0; j <= i; j++) {
+
+                //comprobamos cual es mayor
+                if (type == '<' ? cleanArray[i] < cleanArray[j] : cleanArray[i] > cleanArray[j]) {
+
+                    let temp = cleanArray[i];
+                    cleanArray[i] = cleanArray[j];
+                    cleanArray[j] = temp;
+
+                }
+
+            }
+
+        }
+
+        return cleanArray;
+
+    } else {
+        return null;
+    }
+
+};
+
+console.log(bubbleSort(sequence, '<'));
+
 // calcular la media aritmetica
 const mediaAritmetica = (arr) => {
 
