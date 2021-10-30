@@ -108,8 +108,6 @@ const bubbleSort = (arr, type) => {
 
 };
 
-console.log(bubbleSort(sequence, '<'));
-
 // calcular la media aritmetica
 const mediaAritmetica = (arr) => {
 
