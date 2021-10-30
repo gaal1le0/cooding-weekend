@@ -42,7 +42,7 @@ const _merge = (left, right, type) => {
 
     return sorted;
 
-}
+};
 
 // comienza el proceso
 const sort = (array, type) => {
@@ -71,7 +71,7 @@ const sort = (array, type) => {
         return null;
     }
 
-}
+};
 
 // calcular la media aritmetica
 const mediaAritmetica = (arr) => {
@@ -86,4 +86,32 @@ const mediaAritmetica = (arr) => {
     let media = Math.floor(suma / arr.length);
     return media;
 
-}
+};
+
+// obtener el dni del usuario
+// formato: NNNNNNNN-M
+const computeDNILetter = (dni) => {
+
+    // separamos las partes del dni
+    const dniParts = dni.split('-');
+
+    // comprobarmos el valor
+    if (Number(dniParts[0]) > 0 && Number(dniParts[0]) <= 99999999) {
+
+        //obtenemos el indice de la letra
+        const theoricalLetter = Math.floor(Number(dniParts[0]) % 23);
+        // obtenermos la letra
+        const letter = letrasDNI[theoricalLetter];
+
+        //comprobamos las letras
+        if (letter.toLowerCase() == dniParts[1].toLowerCase()) {
+            return 'DNI y letra correctos';
+        } else {
+            return 'Error, su letra no es correcta';
+        }
+
+    } else {
+        return 'El dni introducido no es correcto';
+    }
+
+};
