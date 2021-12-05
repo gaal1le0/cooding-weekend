@@ -1,10 +1,10 @@
 class SortingObject implements Sorting {
 
-    merge<T>(data: SortingData<T>): SortingData<T> {
+    merge<T extends Comparable>(data: SortingData<T>): SortingData<T> {
         return []
     }
 
-    bubbleSort<T>(data: SortingData<T>): SortingData<T> {
+    bubbleSort<T extends Comparable>(data: SortingData<T>): SortingData<T> {
         return []
     }
 
